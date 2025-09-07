@@ -26,6 +26,17 @@ public class MarsRover {
     }
   }
 
+  public void executeCommands(String commands) {
+    if (commands == null || commands.isEmpty()) {
+      return;
+    }
+
+    for (char commandChar : commands.toCharArray()) {
+      Command command = Command.fromChar(commandChar);
+      executeCommand(command);
+    }
+  }
+
   private void move(int distance) {
     location.getDirection().move(location, distance);
   }
