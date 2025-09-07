@@ -56,7 +56,7 @@ class MarsRoverTest {
   @Test
   void should_turnLeft_direction_S_when_executeCommand_given_direction_E() {
     //Given
-    Location location = new Location(0, 0, W);
+    Location location = new Location(0, 0, S);
     MarsRover marsRover = new MarsRover(location);
     //When
     marsRover.executeCommand(Command.L);
@@ -66,7 +66,7 @@ class MarsRoverTest {
   @Test
   void should_turnLeft_direction_E_when_executeCommand_given_direction_N() {
     //Given
-    Location location = new Location(0, 0, W);
+    Location location = new Location(0, 0, E);
     MarsRover marsRover = new MarsRover(location);
     //When
     marsRover.executeCommand(Command.L);
@@ -76,7 +76,7 @@ class MarsRoverTest {
   @Test
   void should_turnLeft_direction_N_when_executeCommand_given_direction_W() {
     //Given
-    Location location = new Location(0, 0, W);
+    Location location = new Location(0, 0, N);
     MarsRover marsRover = new MarsRover(location);
     //When
     marsRover.executeCommand(Command.L);
