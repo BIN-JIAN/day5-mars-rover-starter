@@ -9,8 +9,9 @@ public class MarsRover {
   public void executeCommand (Command m){
     if(m==Command.M && location.getDirection() == Direction.N){
       location.setLocationY(location.getLocationY()+1);
-    }
-  }
+    }else if(m==Command.M && location.getDirection() == Direction.S){
+      location.setLocationY(location.getLocationY()-1);
+  }}
 
   public Location getLocation() {
     return location;
