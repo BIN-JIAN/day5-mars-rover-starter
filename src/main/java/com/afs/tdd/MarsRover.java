@@ -11,6 +11,10 @@ public class MarsRover {
       location.setLocationY(location.getLocationY()+1);
     }else if(m==Command.M && location.getDirection() == Direction.S){
       location.setLocationY(location.getLocationY()-1);
+    }else if(m==Command.M && location.getDirection() == Direction.E){
+      location.setLocationX(location.getLocationX()+1);
+    }else if(m==Command.M && location.getDirection() == Direction.W){
+      location.setLocationX(location.getLocationX()-1);
   }}
 
   public Location getLocation() {
