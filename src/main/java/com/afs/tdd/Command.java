@@ -1,8 +1,7 @@
 package com.afs.tdd;
 
 public enum Command {
-  M,
-  L,
-  R;
-
+  MOVE,
+  TURN_LEFT,
+  TURN_RIGHT;
 }

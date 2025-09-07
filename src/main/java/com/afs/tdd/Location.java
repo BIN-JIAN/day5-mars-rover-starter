@@ -16,7 +16,6 @@ public class Location {
   public int getLocationY() {
     return locationY;
   }
-
   public void setLocationY(int locationY) {
     this.locationY = locationY;
   }
@@ -29,5 +28,9 @@ public class Location {
 
   public Direction getDirection() {
     return direction;
+  }
+
+  public void setDirection(Direction direction) {
+    this.direction = direction;
   }
 }
