@@ -13,8 +13,7 @@ class MarsRoverTest {
     //When
     marsRover.executeCommand(Command.M);
     //Then
-    Location currentLocation = new Location(0,1,Direction.N);
-    assertEquals(currentLocation.getLocaltionY(), marsRover.getLocation().getLocationY());
+    assertEquals(1, marsRover.getLocation().getLocationY());
 
   }
 }
