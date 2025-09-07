@@ -20,8 +20,30 @@ public class MarsRover {
       case TURN_RIGHT:
         location.setDirection(location.getDirection().turnRight());
         break;
+      case MOVE_BACK:
+        moveBack();
+        break;
     }
   }
+
+  private void moveBack() {
+    switch (location.getDirection()){
+      case North:
+        moveBackNorth();
+        break;
+      case South:
+        moveBackSouth();
+        break;
+      case East:
+        moveBackEast();
+        break;
+      case West:
+        moveBackWest();
+        break;
+    }
+  }
+
+
 
   private void move() {
     switch (location.getDirection()) {
@@ -57,5 +79,22 @@ public class MarsRover {
 
   public Location getLocation() {
     return location;
+  }
+
+  private void moveBackEast() {
+    location.setLocationX(location.getLocationX() - MOVE_DISTANCE);
+  }
+
+  private void moveBackWest() {
+    location.setLocationX(location.getLocationX() + MOVE_DISTANCE);
+
+  }
+
+  private void moveBackNorth() {
+    location.setLocationY(location.getLocationY() - MOVE_DISTANCE);
+  }
+
+  private void moveBackSouth() {
+    location.setLocationY(location.getLocationY() + MOVE_DISTANCE);
   }
 }
