@@ -1,10 +1,32 @@
 package com.afs.tdd;
 
 public enum Direction {
-  North,
-  South,
-  East,
-  West;
+  North {
+    @Override
+    public void move(Location location, int distance) {
+      location.setLocationY(location.getLocationY() + distance);
+    }
+  },
+  South {
+    @Override
+    public void move(Location location, int distance) {
+      location.setLocationY(location.getLocationY() - distance);
+    }
+  },
+  East {
+    @Override
+    public void move(Location location, int distance) {
+      location.setLocationX(location.getLocationX() + distance);
+    }
+  },
+  West {
+    @Override
+    public void move(Location location, int distance) {
+      location.setLocationX(location.getLocationX() - distance);
+    }
+  };
+
+  public abstract void move(Location location, int distance);
 
   public Direction turnLeft() {
     switch (this) {

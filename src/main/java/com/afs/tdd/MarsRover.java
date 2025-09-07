@@ -12,7 +12,7 @@ public class MarsRover {
   public void executeCommand(Command command) {
     switch (command) {
       case MOVE:
-        move();
+        move(MOVE_DISTANCE);
         break;
       case TURN_LEFT:
         location.setDirection(location.getDirection().turnLeft());
@@ -21,80 +21,16 @@ public class MarsRover {
         location.setDirection(location.getDirection().turnRight());
         break;
       case MOVE_BACK:
-        moveBack();
+        move(-MOVE_DISTANCE);
         break;
     }
   }
 
-  private void moveBack() {
-    switch (location.getDirection()){
-      case North:
-        moveBackNorth();
-        break;
-      case South:
-        moveBackSouth();
-        break;
-      case East:
-        moveBackEast();
-        break;
-      case West:
-        moveBackWest();
-        break;
-    }
-  }
-
-
-
-  private void move() {
-    switch (location.getDirection()) {
-      case North:
-        moveNorth();
-        break;
-      case South:
-        moveSouth();
-        break;
-      case East:
-        moveEast();
-        break;
-      case West:
-        moveWest();
-        break;
-    }
-  }
-
-  private void moveNorth() {
-    location.setLocationY(location.getLocationY() + MOVE_DISTANCE);
-  }
-  private void moveSouth() {
-    location.setLocationY(location.getLocationY() - MOVE_DISTANCE);
-  }
-
-  private void moveEast() {
-    location.setLocationX(location.getLocationX() + MOVE_DISTANCE);
-  }
-
-  private void moveWest() {
-    location.setLocationX(location.getLocationX() - MOVE_DISTANCE);
+  private void move(int distance) {
+    location.getDirection().move(location, distance);
   }
 
   public Location getLocation() {
     return location;
-  }
-
-  private void moveBackEast() {
-    location.setLocationX(location.getLocationX() - MOVE_DISTANCE);
-  }
-
-  private void moveBackWest() {
-    location.setLocationX(location.getLocationX() + MOVE_DISTANCE);
-
-  }
-
-  private void moveBackNorth() {
-    location.setLocationY(location.getLocationY() - MOVE_DISTANCE);
-  }
-
-  private void moveBackSouth() {
-    location.setLocationY(location.getLocationY() + MOVE_DISTANCE);
   }
 }
