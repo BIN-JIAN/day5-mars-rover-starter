@@ -98,6 +98,7 @@ class MarsRoverTest {
     assertEquals(West, marsRover.getLocation().getDirection());
   }
 
+  //turn right
   @Test
   void should_turnRight_direction_N_when_executeCommand_given_direction_E() {
     //Given
@@ -141,4 +142,50 @@ class MarsRoverTest {
     //Then
     assertEquals(North, marsRover.getLocation().getDirection());
   }
+
+  //move back
+  @Test
+  void should_move_back_direction_W_when_executeCommand_given_10() {
+    //Given
+    Location location = new Location(0, 0, West);
+    MarsRover marsRover = new MarsRover(location);
+    //When
+    marsRover.executeCommand(Command.MOVE_BACK);
+    //Then
+    assertEquals(1, marsRover.getLocation().getLocationX());
+  }
+
+  @Test
+  void should_move_back_direction_S_when_executeCommand_given_direction_01() {
+    //Given
+    Location location = new Location(0, 0, South);
+    MarsRover marsRover = new MarsRover(location);
+    //When
+    marsRover.executeCommand(Command.MOVE_BACK);
+    //Then
+    assertEquals(1, marsRover.getLocation().getLocationY());
+  }
+
+  @Test
+  void should_move_back_direction_E_when_executeCommand_given_direction_minus10() {
+    //Given
+    Location location = new Location(0, 0, East);
+    MarsRover marsRover = new MarsRover(location);
+    //When
+    marsRover.executeCommand(Command.MOVE_BACK);
+    //Then
+    assertEquals(-1, marsRover.getLocation().getLocationX());
+  }
+
+  @Test
+  void should_move_back_direction_N_when_executeCommand_given_direction_0minus1() {
+    //Given
+    Location location = new Location(0, 0, North);
+    MarsRover marsRover = new MarsRover(location);
+    //When
+    marsRover.executeCommand(Command.MOVE_BACK);
+    //Then
+    assertEquals(-1, marsRover.getLocation().getLocationY());
+  }
+
 }

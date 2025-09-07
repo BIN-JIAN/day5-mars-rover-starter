@@ -59,4 +59,3 @@ public class MarsRover {
     return location;
   }
 }
-K
