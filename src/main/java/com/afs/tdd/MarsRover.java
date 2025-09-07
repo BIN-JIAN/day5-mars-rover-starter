@@ -27,15 +27,14 @@ public class MarsRover {
       }
     } else if (m==Command.R) {
       if(location.getDirection() == Direction.N){
-        location = new Location(location.getLocationX(),location.getLocationY(),Direction.W);
-      }else if(location.getDirection() == Direction.E){
-        location = new Location(location.getLocationX(),location.getLocationY(),Direction.N);
-      }else if(location.getDirection() == Direction.S){
         location = new Location(location.getLocationX(),location.getLocationY(),Direction.E);
-      }else if(location.getDirection() == Direction.W){
+      }else if(location.getDirection() == Direction.E){
         location = new Location(location.getLocationX(),location.getLocationY(),Direction.S);
+      }else if(location.getDirection() == Direction.S){
+        location = new Location(location.getLocationX(),location.getLocationY(),Direction.W);
+      }else if(location.getDirection() == Direction.W){
+        location = new Location(location.getLocationX(),location.getLocationY(),Direction.N);
       }
-
     }
   }
 
